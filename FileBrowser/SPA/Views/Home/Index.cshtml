@@ -1,0 +1,57 @@
+﻿@{
+
+}
+
+<html>
+
+<head>
+
+    <title>@ViewBag.Title - File Browser</title>
+
+</head>
+
+
+<body ng-controller="NavigateController">
+
+
+
+    <table class="table table-striped" style="background-color: silver " >
+        <thead>
+            <tr>
+                <th> Less 10mb</th>
+                <th>50mb-100mb</th>
+                <th>More 100mb</th>
+            </tr>
+        </thead>
+        <tbody style ="border:medium">
+
+            <tr>
+
+                <td> {{files[0].ListCount.Less}}</td>
+                <td>    {{files[0].ListCount.Medium}}</td>
+                <td>    {{files[0].ListCount.More}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+    <b>Current path:</b> {{files[0].CurrentPath}}
+    <br />
+
+    <a href="" ng-click="goEnter(goBack)">..</a>
+
+    <div ng-repeat="file in files">
+
+        
+        <a href=""  name="{{file.Name}}"  ng-click="goEnter(file.Path)">{{file.Name}}</a>
+
+           </div>
+
+          
+
+
+
+
+
+</body>
+</html>
